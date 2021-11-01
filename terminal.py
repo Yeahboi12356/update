@@ -52,8 +52,8 @@ def terminal():
         print("list pankages                check pangkages")
         terminal()
     elif gj == "nise update":
-          done = False
-        def loading():
+        done = False
+        def log():
                 for c in itertools.cycle(['|','/','-','|','/','-','|']):
                     if done:
                         break
@@ -61,7 +61,7 @@ def terminal():
                     sys.stdout.flush()
                     time.sleep(0.1)
                 sys.stdout.write('\r     ')
-        t = threading.Thread(target=loading)
+        t = threading.Thread(target=log)
         t.start()
         time.sleep(10)
         done = True
