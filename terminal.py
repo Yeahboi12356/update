@@ -504,7 +504,7 @@ def default():
         print("list pankages                check pangkages")
         default()
     elif gj == "nise update":
-          done = False
+        done = False
         def loading():
                 for c in itertools.cycle(['|','/','-','|','/','-','|']):
                     if done:
