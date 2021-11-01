@@ -82,7 +82,7 @@ def terminal():
         t.start()
         time.sleep(10)
         done = True
-        os.system("python nisupdate.py")
+        os.system("python nisupgrade.py")
 
     elif gj == "list pankages":
         print("list pankages:>")
