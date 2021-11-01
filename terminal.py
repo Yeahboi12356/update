@@ -27,6 +27,8 @@ def hostname():
     t = input("\033[1;33;40mcustom/default: \033[1;37;40m")
     if t == "custom":
         terminal()
+    elif t == "default":
+        default()
     else:
         print("\033[1;31;40mtype the hostname correctly!! \033[1;37;40m")
         hostname()
