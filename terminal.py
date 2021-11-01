@@ -39,15 +39,36 @@ def terminal():
         terminal()
     elif gj == "nise":
         print("update                       update pankages")
+        print("upgrade                      upgrade terminal")
         print("install                      install pankages")
         print("list pankages                check pangkages")
         terminal()
     elif gj == "nise ":
         print("update                       update pankages")
+        print("upgrade                      upgrade terminal")
         print("install                      install pankages")
         print("list pankages                check pangkages")
         terminal()
     elif gj == "nise update":
+          done = False
+        def loading():
+                for c in itertools.cycle(['|','/','-','|','/','-','|']):
+                    if done:
+                        break
+                    sys.stdout.write('\rchecking pankages' + c)
+                    sys.stdout.flush()
+                    time.sleep(0.1)
+                sys.stdout.write('\r     ')
+        t = threading.Thread(target=loading)
+        t.start()
+        time.sleep(10)
+        done = True
+        print("pankages up to date")
+        print("cleaning 5 seconds..")
+        sleep(5)
+        os.system("cls")
+        terminal()
+    elif gj == "nise upgrade":
         done = False
         def loading():
                 for c in itertools.cycle(['|','/','-','|','/','-','|']):
@@ -470,15 +491,36 @@ def default():
         default()
     elif gj == "nise":
         print("update                       update pankages")
+        print("upgrade                      upgrade terminal")
         print("install                      install pankages")
         print("list pankages                check pangkages")
         default()
     elif gj == "nise ":
         print("update                       update pankages")
+        print("upgrade                      upgrade terminal")
         print("install                      install pankages")
         print("list pankages                check pangkages")
         default()
     elif gj == "nise update":
+          done = False
+        def loading():
+                for c in itertools.cycle(['|','/','-','|','/','-','|']):
+                    if done:
+                        break
+                    sys.stdout.write('\rchecking pankages' + c)
+                    sys.stdout.flush()
+                    time.sleep(0.1)
+                sys.stdout.write('\r     ')
+        t = threading.Thread(target=loading)
+        t.start()
+        time.sleep(10)
+        done = True
+        print("pankages up to date")
+        print("cleaning 5 seconds..")
+        sleep(5)
+        os.system("cls")
+        default()
+    elif gj == "nise upgrade":
         done = False
         def loading():
                 for c in itertools.cycle(['|','/','-','|','/','-','|']):
@@ -492,7 +534,7 @@ def default():
         t.start()
         time.sleep(10)
         done = True
-        os.system("python nisupdate.py")
+        os.system("python nisupgrade.py")
 
     elif gj == "list pankages":
         print("list pankages:>")
