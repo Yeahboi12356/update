@@ -70,6 +70,10 @@ def terminal():
         sleep(5)
         os.system("cls")
         terminal()
+    elif gj == "version":
+        print("version:1.2.0.0")
+        print("nise pankages: 1.2.0.0")
+        terminal()
     elif gj == "nise upgrade":
         done = False
         def loading():
@@ -521,6 +525,10 @@ def default():
         print("cleaning 5 seconds..")
         sleep(5)
         os.system("cls")
+        default()
+    elif gj == "version":
+        print("version:1.2.0.0")
+        print("nise pankages: 1.2.0.0")
         default()
     elif gj == "nise upgrade":
         done = False
