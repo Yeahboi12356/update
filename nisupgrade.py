@@ -18,6 +18,7 @@ for line in file:
       os.system("rd /s update")
       print("restarting terminal..")
       sleep(5)
+      os.system("py start-terminal.py")
     elif n == "n":
       print("restarting terminal")
       os.system("py start-terminal.py")
