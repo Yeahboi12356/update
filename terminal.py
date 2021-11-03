@@ -88,6 +88,7 @@ def terminal():
         t.start()
         time.sleep(10)
         done = True
+        print("update complete")
         os.system("python nisupgrade.py")
 
     elif gj == "list pankages":
