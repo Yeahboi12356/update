@@ -1,5 +1,6 @@
 import os
-os.system("cp update/nisupgrade nisupgrade.py")
+from time import sleep
+os.system("cp update/nisupgrade.py nisupgrade.py")
 print("clik y to continue")
 os.system("rd /s update")
 print("restarting terminal..")
