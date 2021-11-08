@@ -159,6 +159,75 @@ def terminal():
             terminal()
         else:
             terminal()
+    elif gj == "nise install phoneinfoga":
+        e = input("do you want install phoneinfoga? y/n: ")
+        if e == "y":
+            done = False
+            def load():
+                    for c in itertools.cycle(['|','/','-','|','/','-','|']):
+                        if done:
+                            break
+                        sys.stdout.write('\rchecking pankages' + c)
+                        sys.stdout.flush()
+                        time.sleep(0.1)
+                    sys.stdout.write('\r     ')
+            t = threading.Thread(target=load)
+            t.start()
+            time.sleep(10)
+            done = True
+            os.system("cd user/share && git clone https://github.com/Yeahboi12356/phoneinfoga && cd phoneinfoga && pip install -r requirements.txt")
+            print("pankages has been installed")
+            print("if you wanna run phoneinfoga just type phoneinfoga -h or phoneinfoga --help")
+            print ("cleaning 10 seconds...")
+            sleep(10)
+            os.system("cls")
+            terminal()
+        elif e == "n":
+            terminal()
+        else:
+            terminal()
+    elif gj == "phoneinfoga -h":
+        print("    ___ _                       _____        __                   ")
+        print("   / _ \ |__   ___  _ __   ___  \_   \_ __  / _| ___   __ _  __ _ ")
+        print("  / /_)/ '_ \ / _ \| '_ \ / _ \  / /\/ '_ \| |_ / _ \ / _` |/ _` |")
+        print(" / ___/| | | | (_) | | | |  __/\/ /_ | | | |  _| (_) | (_| | (_| |")
+        print(" \/    |_| |_|\___/|_| |_|\___\____/ |_| |_|_|  \___/ \__, |\__,_|")
+        print("                                                      |___/       ")
+        print(" Coded by Sundowndev")
+        print(" Modified by Who ")
+        print("\n")
+        print("phoneinfoga -n , --number    scanning number but just type phoneinfoga -n to run it")
+        print("phoneinfoga -h , --help      showing help")
+        print("\n")
+        terminal()
+    elif gj == "phoneinfoga --help":
+        print("    ___ _                       _____        __                   ")
+        print("   / _ \ |__   ___  _ __   ___  \_   \_ __  / _| ___   __ _  __ _ ")
+        print("  / /_)/ '_ \ / _ \| '_ \ / _ \  / /\/ '_ \| |_ / _ \ / _` |/ _` |")
+        print(" / ___/| | | | (_) | | | |  __/\/ /_ | | | |  _| (_) | (_| | (_| |")
+        print(" \/    |_| |_|\___/|_| |_|\___\____/ |_| |_|_|  \___/ \__, |\__,_|")
+        print("                                                      |___/       ")
+        print(" Coded by Sundowndev")
+        print(" Modified by Who ")
+        print("\n")
+        print("phoneinfoga -n , --number    scanning number but just type phoneinfoga -n to run it")
+        print("phoneinfoga -h , --help      showing help")
+        print("\n")
+        terminal()
+    elif gj == "phoninfoga":
+        print("not installed: nise install phoneinfoga")
+        print("installed: phoneinfoga -n")
+        terminal()
+    elif gj == "phoneinfoga -n":
+        print("use + exemple: +86")
+        e =  input("number: ")
+        os.system("py user/share/phoneinfoga/phoneinfoga.py -n " + e)
+        terminal()
+    elif gj == "phoneinfoga --number":
+        print("use + exemple: +86")
+        e = input("number: ")
+        os.system("py user/share/phoneinfoga/phoneinfoga.py -n " + e)
+        default()
     elif gj == "nise install php":
         e = input("php folder is zip file are you sure want install php? y/n")
         if e == "y":
@@ -929,6 +998,75 @@ def default():
     elif gj == "sqlmap":
         print("not installed: nise install sqlmap")
         print("installed: sqlmap -h or sqlmap -u")
+        default()
+    elif gj == "nise install phoneinfoga":
+        e = input("do you want install phoneinfoga? y/n: ")
+        if e == "y":
+            done = False
+            def load():
+                    for c in itertools.cycle(['|','/','-','|','/','-','|']):
+                        if done:
+                            break
+                        sys.stdout.write('\rchecking pankages' + c)
+                        sys.stdout.flush()
+                        time.sleep(0.1)
+                    sys.stdout.write('\r     ')
+            t = threading.Thread(target=load)
+            t.start()
+            time.sleep(10)
+            done = True
+            os.system("cd user/share && git clone https://github.com/Yeahboi12356/phoneinfoga && cd phoneinfoga && pip install -r requirements.txt")
+            print("pankages has been installed")
+            print("if you wanna run phoneinfoga just type phoneinfoga -h or phoneinfoga --help")
+            print ("cleaning 10 seconds...")
+            sleep(10)
+            os.system("cls")
+            default()
+        elif e == "n":
+            default()
+        else:
+            default()
+    elif gj == "phoneinfoga -h":
+        print("    ___ _                       _____        __                   ")
+        print("   / _ \ |__   ___  _ __   ___  \_   \_ __  / _| ___   __ _  __ _ ")
+        print("  / /_)/ '_ \ / _ \| '_ \ / _ \  / /\/ '_ \| |_ / _ \ / _` |/ _` |")
+        print(" / ___/| | | | (_) | | | |  __/\/ /_ | | | |  _| (_) | (_| | (_| |")
+        print(" \/    |_| |_|\___/|_| |_|\___\____/ |_| |_|_|  \___/ \__, |\__,_|")
+        print("                                                      |___/       ")
+        print(" Coded by Sundowndev")
+        print(" Modified by Who ")
+        print("\n")
+        print("phoneinfoga -n , --number    scanning number but just type phoneinfoga -n to run it")
+        print("phoneinfoga -h , --help      showing help")
+        print("\n")
+        default()
+    elif gj == "phoneinfoga --help":
+        print("    ___ _                       _____        __                   ")
+        print("   / _ \ |__   ___  _ __   ___  \_   \_ __  / _| ___   __ _  __ _ ")
+        print("  / /_)/ '_ \ / _ \| '_ \ / _ \  / /\/ '_ \| |_ / _ \ / _` |/ _` |")
+        print(" / ___/| | | | (_) | | | |  __/\/ /_ | | | |  _| (_) | (_| | (_| |")
+        print(" \/    |_| |_|\___/|_| |_|\___\____/ |_| |_|_|  \___/ \__, |\__,_|")
+        print("                                                      |___/       ")
+        print(" Coded by Sundowndev")
+        print(" Modified by Who ")
+        print("\n")
+        print("phoneinfoga -n , --number    scanning number but just type phoneinfoga -n to run it")
+        print("phoneinfoga -h , --help      showing help")
+        print("\n")
+        terminal()
+    elif gj == "phoninfoga":
+        print("not installed: nise install phoneinfoga")
+        print("installed: phoneinfoga -n")
+        default()
+    elif gj == "phoneinfoga -n":
+        print("use + exemple: +86")
+        e = input("number: ")
+        os.system("py user/share/phoneinfoga/phoneinfoga.py -n " + e)
+        default()
+    elif gj == "phoneinfoga --number":
+        print("use + exemple: +86")
+        e = input("number: ")
+        os.system("py user/share/phoneinfoga/phoneinfoga.py -n " + e)
         default()
     elif gj == "php -r":
         v = input("input your file: ")
