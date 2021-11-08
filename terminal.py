@@ -227,7 +227,7 @@ def terminal():
         print("use + exemple: +86")
         e = input("number: ")
         os.system("py user/share/phoneinfoga/phoneinfoga.py -n " + e)
-        default()
+        terminal()
     elif gj == "nise install php":
         e = input("php folder is zip file are you sure want install php? y/n")
         if e == "y":
