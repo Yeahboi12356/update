@@ -99,6 +99,7 @@ def terminal():
         print("php")
         print("wireshark")
         print("camera-security")
+        print("phoneinfoga")
         terminal()
     elif gj == "nise list pankages":
         print("list pankages:>")
@@ -107,6 +108,7 @@ def terminal():
         print("php")
         print("wireshark")
         print("camera-security")
+        print("phoneinfoga")
         terminal()
     elif gj == "cls":
         os.system("cls")
@@ -624,6 +626,7 @@ def default():
         print("php")
         print("wireshark")
         print("camera-security")
+        print("phoneinfoga")
         default()
     elif gj == "nise list pankages":
         print("list pankages:>")
@@ -632,6 +635,7 @@ def default():
         print("php")
         print("wireshark")
         print("camera-security")
+        print("phoneinfoga")
         default()
     elif gj == "cls":
         os.system("cls")
