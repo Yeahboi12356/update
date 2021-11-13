@@ -31,7 +31,7 @@ for line in file:
       done = True
       print("starting...")
       sleep(3)
-      os.system("py start-terminal.py")
+      os.system("start-terminal.exe")
     else:
         n = input("are you sure to upgrade pankages? y/n: ")
         if n == "y":
@@ -41,10 +41,10 @@ for line in file:
           os.system("rd /s update")
           print("restarting terminal..")
           sleep(5)
-          os.system("py start-terminal.py")
+          os.system("start-terminal.exe")
         elif n == "n":
           print("restarting terminal")
-          os.system("py start-terminal.py")
+          os.system("start-terminal.exe")
         else:
             print("number not valid")
             os.system("py nisupgrade.py")
