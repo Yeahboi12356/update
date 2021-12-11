@@ -51,47 +51,57 @@ logins = ["""\033[1;32;40m /$$                     /$$
 sh = ["HELLO WORLD!","script by who","type nise to install or update","visit my site https://whoamilinix.000webhostapp.com"]
 def utama():
     os.system("cls")
-    animation = ["[□□□□□□□□□□]0%","[■□□□□□□□□□]10%","[■■□□□□□□□□]20%", "[■■■□□□□□□□]30%", "[■■■■□□□□□□]40%","[■■■■■□□□□□]50%", "[■■■■■■□□□□]60%", "[■■■■■■■□□□]70%", "[■■■■■■■■□□]80%", "[■■■■■■■■■□]90%", "[■■■■■■■■■■]100%"]
-    for i in range(len(animation)):
-        time.sleep(1)
-        sys.stdout.write("\rchecking pankages " + animation[i % len(animation)])
-        sys.stdout.flush()
-    sleep(3)
-    print("\033[1;32;40m|OK\033[1;37;40m")
-    animation = ["[□□□□□□□□□□]0%","[■■■■■□□□□□]50%", "[■■■■■■□□□□]60%", "[■■■■■■■□□□]70%", "[■■■■■■■■□□]80%", "[■■■■■■■■■□]90%", "[■■■■■■■■■■]100%"]
-    for i in range(len(animation)):
-        time.sleep(2)
-        sys.stdout.write("\rchecking update   " + animation[i % len(animation)])
-        sys.stdout.flush()
-    print("\033[1;32;40m|OK\033[1;37;40m")
-    sleep(5)
-    url = "https://whoamilinix.000webhostapp.com/update.txt"
-    file = urllib.request.urlopen(url)
+    print("\nif you want update pls connect to wifi")
+    print("are you want to update pankages?:")
+    print("1.update")
+    print("2.skip")
+    y = int(input(">"))
+    if y == 1:
+        ayimation = ["[□□□□□□□□□□]0%","[■□□□□□□□□□]10%","[■■□□□□□□□□]20%", "[■■■□□□□□□□]30%", "[■■■■□□□□□□]40%","[■■■■■□□□□□]50%", "[■■■■■■□□□□]60%", "[■■■■■■■□□□]70%", "[■■■■■■■■□□]80%", "[■■■■■■■■■□]90%", "[■■■■■■■■■■]100%"]
+        for i in range(len(ayimation)):
+            time.sleep(1)
+            sys.stdout.write("\rchecking pankages " + ayimation[i % len(ayimation)])
+            sys.stdout.flush()     
+        sleep(3)
+        print("\033[1;32;40m|OK\033[1;37;40m")
+        animation = ["[□□□□□□□□□□]0%","[■■■■■□□□□□]50%", "[■■■■■■□□□□]60%", "[■■■■■■■□□□]70%", "[■■■■■■■■□□]80%", "[■■■■■■■■■□]90%", "[■■■■■■■■■■]100%"]
+        for i in range(len(animation)):
+            time.sleep(2)
+            sys.stdout.write("\rchecking update   " + animation[i % len(animation)])
+            sys.stdout.flush()
+        print("\033[1;32;40m|OK\033[1;37;40m")
+        sleep(5)
+        url = "https://whoamilinix.000webhostapp.com/update.txt"
+        file = urllib.request.urlopen(url)
 
-    for line in file:
-        decoded_line= line.decode("utf-8").strip()
-        print(decoded_line)
-        if decoded_line == "NOT AVAILABLE":
-            print("all pankages up to date no update available")
-            sleep(5)
-            login()
-        else:
-            n = input("are you want to upgrade pankages? y/n: ")
-            if n == "y":
-                files = input("your username: ")
-                os.system("git clone https://github.com/Yeahboi12356/update && cp update/terminal.py home/" + files )
-                print("clik y to continue")
-                os.system("rd /s update")
-                print("restarting terminal..")
+        for line in file:
+            decoded_line= line.decode("utf-8").strip()
+            print(decoded_line)
+            if decoded_line == "NOT AVAILABLE":
+                print("all pankages up to date no update available")
                 sleep(5)
-                os.system("py start-terminal.py")
-            elif n == "n":
-                print("restarting terminal")
-                os.system("py start-terminal.py")
-            else:
-                print("input not valid upgrade has been canceled")
-                sleep(3)
                 login()
+            else:
+                n = input("are you want to upgrade pankages? y/n: ")
+                if n == "y":
+                    files = input("your username: ")
+                    os.system("git clone https://github.com/Yeahboi12356/update && cp update/terminal.py home/" + files )
+                    print("clik y to continue")
+                    os.system("rd /s update")
+                    print("restarting terminal..")
+                    sleep(5)
+                    os.system("py start-terminal.py")
+                elif n == "n":
+                    print("restarting terminal")
+                    os.system("py start-terminal.py")
+                else:
+                    print("input not valid upgrade has been canceled")
+                    sleep(3)
+                    login()
+    elif y == 2:
+        login()
+    else:
+        login()
                 
 def login():
     print("\n")
@@ -101,13 +111,14 @@ def login():
     p = input("\033[1;33;40musernames: \033[1;37;40m")
     print("\033[1;31;40mpassword security sensor mode=ON")
     y = getpass("\033[1;36;40mpassword: \033[1;37;40m")
+    filess = open("user/share/jasp/password.txt",'r')
     files = open("user/share/jasp/username.txt",'r')
     filess = open("user/share/jasp/password.txt",'r')
     if p == files.readline() and y == filess.readline():
         print("\033[1;32;40mlogin complete")
         hostname()
     else:
-        print("\033[1;31;40mlogin denied pls try again")
+        print("\033[1;31;40mlogin denied")
         sleep(2)
         os.system("cls")
         login()
@@ -155,6 +166,10 @@ def terminal():
         print("list pankages                check pangkages")
         print("\n")
         terminal()
+    elif gj == "ping":
+        p = input("input> ")
+        os.system("ping " + p)
+        terminal()
     elif gj == "nise update":
         done = False
         def log():
@@ -173,6 +188,9 @@ def terminal():
         print("cleaning 5 seconds..")
         sleep(5)
         os.system("cls")
+        terminal()
+    elif gj ==  "ifconfig":
+        os.system("ipconfig")
         terminal()
     elif gj == "version":
         print("version:1.2.0.0")
@@ -623,6 +641,11 @@ def terminal():
             print ("2.tables           DBMS database table(s) to enumerate")
             print ("3.columns          Enumerate DBMS database table columns")
             print ("4.dump             Dump DBMS database table entries")
+            print ("")
+            print ("           extra                        ")
+            print ("")
+            print ("5.level            Level of tests to perform (1-5, default 1)")
+            print ("6.another")
             w = int(input("input your chosee: "))
             if w == 1:
                 os.system("python user/share/sqlmap/sqlmap.py -u " + h + " --dbs")
@@ -642,6 +665,75 @@ def terminal():
                 lr = input("columns: ")
                 os.system("python user/share/sqlmap/sqlmap.py -u " + h + " -D " + lll + " -T " + lkk + " -C " + lr + " --dump")
                 terminal()
+            elif w == 5:
+                print("type the level you want")
+                lvl = input("level(1-5)> ")
+                print("another options>:")
+                print ("1.dbs              DBMS database to enumerate")
+                print ("2.tables           DBMS database table(s) to enumerate")
+                print ("3.columns          Enumerate DBMS database table columns")
+                print ("4.dump             Dump DBMS database table entries")
+                print ("")
+                e = int(input("input your chosee: "))
+                if e == 1:
+                    os.system("python user/share/sqlmap/sqlmap.py -u " + h + " --dbs --level " + lvl )
+                    terminal()
+                elif e == 2:
+                    l = input("database: ")
+                    os.system("python user/share/sqlmap/sqlmap.py -u " + h + " -D " + l + " --tables --level " + lvl)
+                    terminal()
+                elif e == 3:
+                    ll = input("database: ")
+                    lk = input("database tables: ")
+                    os.system("python user/share/sqlmap/sqlmap.py -u " + h + " -D " + ll + " -T " + lk + " --columns --level " + lvl)
+                    terminal()
+                elif e == 4:
+                    lll = input("database: ")
+                    lkk = input("database tables: ")
+                    lr = input("columns: ")
+                    os.system("python user/share/sqlmap/sqlmap.py -u " + h + " -D " + lll + " -T " + lkk + " -C " + lr + " --dump --level " + lvl)
+                    terminal()
+                else:
+                    print("input not valid")
+                    terminal()
+            elif w == 6:
+                print("1.help")
+                print("2.another-command")
+                print("3.exit")
+                g = int(input("> "))
+                if g == 1:
+                    os.system("python user/share/sqlmap/sqlmap.py --help")
+                    terminal()
+                elif g == 2:
+                    print("type another command in sqlmap>")
+                    ano = input("sqlmap> ")
+                    print("another options>:")
+                    print ("1.dbs              DBMS database to enumerate")
+                    print ("2.tables           DBMS database table(s) to enumerate")
+                    print ("3.columns          Enumerate DBMS database table columns")
+                    print ("4.dump             Dump DBMS database table entries")
+                    print ("")
+                    e = int(input("input your chosee: "))
+                    if e == 1:
+                        os.system("python user/share/sqlmap/sqlmap.py -u " + h + " --dbs " + ano)
+                        terminal()
+                    elif e == 2:
+                        l = input("database: ")
+                        os.system("python user/share/sqlmap/sqlmap.py -u " + h + " -D " + l + " --tables " + ano)
+                        terminal()
+                    elif e == 3:
+                        ll = input("database: ")
+                        lk = input("database tables: ")
+                        os.system("python user/share/sqlmap/sqlmap.py -u " + h + " -D " + ll + " -T " + lk + " --columns " + ano)
+                        terminal()
+                    elif e == 4:
+                        lll = input("database: ")
+                        lkk = input("database tables: ")
+                        lr = input("columns: ")
+                        os.system("python user/share/sqlmap/sqlmap.py -u " + h + " -D " + lll + " -T " + lkk + " -C " + lr + " --dump " + ano)
+                        terminal()
+                elif g == 3:
+                    terminal()
             else:
                 print("number not valid")
                 terminal()
@@ -1131,6 +1223,11 @@ def default():
             print ("2.tables           DBMS database table(s) to enumerate")
             print ("3.columns          Enumerate DBMS database table columns")
             print ("4.dump             Dump DBMS database table entries")
+            print ("")
+            print ("           extra                        ")
+            print ("")
+            print ("5.level            Level of tests to perform (1-5, default 1)")
+            print ("6.another")
             w = int(input("input your chosee: "))
             if w == 1:
                 os.system("python user/share/sqlmap/sqlmap.py -u " + h + " --dbs")
@@ -1150,6 +1247,78 @@ def default():
                 lr = input("columns: ")
                 os.system("python user/share/sqlmap/sqlmap.py -u " + h + " -D " + lll + " -T " + lkk + " -C " + lr + " --dump")
                 default()
+            elif w == 5:
+                print("type the level you want")
+                lvl = input("level(1-5)> ")
+                print("another options>:")
+                print ("1.dbs              DBMS database to enumerate")
+                print ("2.tables           DBMS database table(s) to enumerate")
+                print ("3.columns          Enumerate DBMS database table columns")
+                print ("4.dump             Dump DBMS database table entries")
+                print ("")
+                e = int(input("input your chosee: "))
+                if e == 1:
+                    os.system("python user/share/sqlmap/sqlmap.py -u " + h + " --dbs --level " + lvl )
+                    default()
+                elif e == 2:
+                    l = input("database: ")
+                    os.system("python user/share/sqlmap/sqlmap.py -u " + h + " -D " + l + " --tables --level " + lvl)
+                    default()
+                elif e == 3:
+                    ll = input("database: ")
+                    lk = input("database tables: ")
+                    os.system("python user/share/sqlmap/sqlmap.py -u " + h + " -D " + ll + " -T " + lk + " --columns --level " + lvl)
+                    default()
+                elif e == 4:
+                    lll = input("database: ")
+                    lkk = input("database tables: ")
+                    lr = input("columns: ")
+                    os.system("python user/share/sqlmap/sqlmap.py -u " + h + " -D " + lll + " -T " + lkk + " -C " + lr + " --dump --level " + lvl)
+                    default()
+                else:
+                    print("input not valid")
+                    default()
+            elif w == 6:
+                print("1.help")
+                print("2.another-command")
+                print("3.exit")
+                g = int(input("> "))
+                if g == 1:
+                    os.system("python user/share/sqlmap/sqlmap.py --help")
+                    default()
+                elif g == 2:
+                    print("type another command in sqlmap>")
+                    ano = input("sqlmap> ")
+                    print("another options>:")
+                    print ("1.dbs              DBMS database to enumerate")
+                    print ("2.tables           DBMS database table(s) to enumerate")
+                    print ("3.columns          Enumerate DBMS database table columns")
+                    print ("4.dump             Dump DBMS database table entries")
+                    print ("")
+                    e = int(input("input your chosee: "))
+                    if e == 1:
+                        os.system("python user/share/sqlmap/sqlmap.py -u " + h + " --dbs " + ano)
+                        default()
+                    elif e == 2:
+                        l = input("database: ")
+                        os.system("python user/share/sqlmap/sqlmap.py -u " + h + " -D " + l + " --tables " + ano)
+                        default()
+                    elif e == 3:
+                        ll = input("database: ")
+                        lk = input("database tables: ")
+                        os.system("python user/share/sqlmap/sqlmap.py -u " + h + " -D " + ll + " -T " + lk + " --columns " + ano)
+                        default()
+                    elif e == 4:
+                        lll = input("database: ")
+                        lkk = input("database tables: ")
+                        lr = input("columns: ")
+                        os.system("python user/share/sqlmap/sqlmap.py -u " + h + " -D " + lll + " -T " + lkk + " -C " + lr + " --dump " + ano)
+                        default()
+                elif g == 3:
+                    default()
+                else:
+                    print("number not valid")
+                    default()
             else:
                 print("number not valid")
                 default()
@@ -1264,6 +1433,10 @@ def default():
         print ("restarting...")
         sleep(3)
         os.system("start-terminal.exe")
+    elif gj == "ping":
+        p = input("input> ")
+        os.system("ping " + p)
+        default()
     elif gj == "restart ":
         print ("restarting...")
         sleep(3)
@@ -1276,6 +1449,9 @@ def default():
         print ("restarting...")
         sleep(3)
         os.system("start-terminal.exe")
+    elif gj ==  "ifconfig":
+        os.system("ipconfig")
+        default()
     else:
         print(gj + " command not found")
         default()
