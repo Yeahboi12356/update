@@ -14,7 +14,6 @@ for line in file:
       print("all pankages up to date no update available")
       n = input("are you sure to upgrade pankages? y/n: ")
       if n == "y":
-        files = input("your username: ")
         os.system("git clone https://github.com/Yeahboi12356/update")
         os.system("update.bat")
       elif n == "n":
